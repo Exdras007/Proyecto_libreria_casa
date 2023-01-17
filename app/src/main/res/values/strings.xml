@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Proyecto_libreria</string>
+    <string name="e_reader_app">E-Reader App</string>
+    <string name="libros">libros</string>
+    <string name="inicio">inicio</string>
+    <string name="ajustes">ajustes</string>
+    <string name="comics">comics</string>
+    <string name="del_reader">DEL READER</string>
+    <string name="KelRed">KelRed</string>
+    <string name="imagen_de_los_libros_a_mostrar">Imagen de los libros a mostrar</string>
+    <string name="titulo">Titulo</string>
+    <string name="autor">Autor</string>
+    <string name="id">ID</string>
+    <string name="numero_de_p_ginas">Numero de páginas:</string>
+    <string name="_0_0">0.0</string>
+    <string name="_000">000</string>
+    <string name="ordenar_libros_por_autor">Ordenar libros por autor:</string>
+    <string name="nuevo_libro">Nuevo libro</string>
+    <string name="id_del_nuevo_libro">Id del nuevo libro...</string>
+    <string name="titulo_del_nuevo_libro">Titulo del nuevo libro...</string>
+    <string name="autor_del_libro">Autor del libro...</string>
+    <string name="paginas_del_nuevo_libro">Paginas del nuevo libro...</string>
+    <string name="precio_del_nuevo_libro">Precio del nuevo libro...</string>
+    <string name="nuevo_libro_cabecera">Nuevo Libro</string>
+    <string name="volver">Volver</string>
+    <string name="a_adir_nuevo_libro">Añadir nuevo libro</string>
+    KelRed
+</resources>

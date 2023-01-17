@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Insertar_libro">
+
+    <LinearLayout
+        android:id="@+id/layout_edts_nuevolibro"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_NuevoLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#61CEFF"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/nuevo_libro_cabecera"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/edt_nuevoID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/id_del_nuevo_libro"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="20dp"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textColorHint="#4C4C4C"
+            android:textStyle="italic"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edt_nuevoTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/titulo_del_nuevo_libro"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#4C4C4C"
+            android:textStyle="italic"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edt_AutorNuevoLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/autor_del_libro"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#4C4C4C"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/edt_PaginasNuevoLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/paginas_del_nuevo_libro"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:padding="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#4C4C4C"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/edt_PrecioNuevoLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/precio_del_nuevo_libro"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:padding="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#4C4C4C"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_insertar"
+        android:layout_width="153dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:backgroundTint="#0091D3"
+        android:onClick="InsertarLibro"
+        android:text="@string/a_adir_nuevo_libro"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_volver"
+        android:layout_width="153dp"
+        android:layout_height="43dp"
+        android:layout_weight="1"
+        android:backgroundTint="#0091D3"
+        android:onClick="Volver"
+        android:text="@string/volver"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
