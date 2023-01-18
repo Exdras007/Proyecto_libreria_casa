@@ -89,7 +89,7 @@ public class LibroViewHolder extends RecyclerView.ViewHolder implements View.OnC
     {
         int posicion = getLayoutPosition();
         Libro l = lla.getLibros().get(posicion);
-        Intent intent = new Intent(lla.getContexto(), DetallesLibrosActivity.class);
+        Intent intent = new Intent(lla.getContexto(), activity_detalles_libro.class);
         intent.putExtra(EXTRA_LIBRO_ITEM, l);
         lla.getContexto().startActivity(intent);
     }

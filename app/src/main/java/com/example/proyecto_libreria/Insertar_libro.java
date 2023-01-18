@@ -52,19 +52,28 @@ public class Insertar_libro extends AppCompatActivity
 
         if(ID_Libro.isEmpty())
         {
-            ID_nuevoLibro.setError("escribe algo");
+            ID_nuevoLibro.setError("Debes poner al menos un ID");
+            return;
         }
         if(Titulo_Libro.isEmpty())
         {
-            Titulo_nuevoLibro.setError("escribe algo");
+            Titulo_nuevoLibro.setError("Debes poner un titulo al libro");
+            return;
         }
         if(NumeroPaginas_Libro_texto.isEmpty())
         {
-            NumeroPag_nuevoLibro.setError("escribe algo");
+            NumeroPag_nuevoLibro.setError("Debes poner el numero de paginas");
+            return;
+        }
+        if(NumeroPaginas_Libro_texto.startsWith("0"))
+        {
+            NumeroPag_nuevoLibro.setError("No puedes empezar por 0 o tener 0 paginas");
+            return;
         }
         if(Precio_Libro_texto.isEmpty())
         {
-            Precio_nuevoLibro.setError("escribe algo");
+            Precio_nuevoLibro.setError("Debes de poner el precio");
+            return;
         }
 
         int NumPaginas_Libro = Integer.parseInt(String.valueOf(NumeroPaginas_Libro_texto));

@@ -34,6 +34,7 @@ public class activity_borrar_libro extends AppCompatActivity
             if (ID_Libro.isEmpty())
             {
                 ID_borrarLibro.setError("Debes poner al menos un ID");
+                return;
             }
 
         // -----------------------------------------------------------------------------------------

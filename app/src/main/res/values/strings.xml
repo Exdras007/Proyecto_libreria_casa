@@ -27,5 +27,14 @@
     <string name="borrar_libro">Borrar libro</string>
     <string name="borrar_libro_txt">Borrar Libro</string>
     <string name="id_del_libro_a_borrar">ID del libro a borrar</string>
+    <string name="titulo_detalles_libro">Titulo</string>
+    <string name="titulo_del_libro">Titulo del libro</string>
+    <string name="autor_del_libro_detalles">Autor del libro</string>
+    <string name="nada">Nada</string>
+    <string name="Cero">0.0 €</string>
+    <string name="Cero_paginas">000</string>
+    <string name="numero_de_paginas">Numero de paginas:</string>
+    <string name="id_detalles">ID</string>
+    <string name="detalles_del_libro">Detalles del libro</string>
     KelRed
 </resources>
