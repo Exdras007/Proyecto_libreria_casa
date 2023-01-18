@@ -24,5 +24,8 @@
     <string name="nuevo_libro_cabecera">Nuevo Libro</string>
     <string name="volver">Volver</string>
     <string name="a_adir_nuevo_libro">Añadir nuevo libro</string>
+    <string name="borrar_libro">Borrar libro</string>
+    <string name="borrar_libro_txt">Borrar Libro</string>
+    <string name="id_del_libro_a_borrar">ID del libro a borrar</string>
     KelRed
 </resources>

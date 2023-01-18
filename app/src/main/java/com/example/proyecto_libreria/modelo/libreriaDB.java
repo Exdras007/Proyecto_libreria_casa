@@ -85,6 +85,36 @@ public class libreriaDB
         }
     }
 
+    public static boolean borrarLibro(String ID_Libro)
+    {
+        Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
+        if(conexion == null)
+        {
+            return false;
+        }
+        try
+        {
+            String ordensql = "DELETE FROM libros WHERE (ID_Libro = ?);";
+            PreparedStatement sentencia = conexion.prepareStatement(ordensql);
+            sentencia.setString(1, ID_Libro);
+            int filasAfectadas = sentencia.executeUpdate();
+            sentencia.close();
+            conexion.close();
+            if(filasAfectadas > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (SQLException e)
+        {
+            return false;
+        }
+    }
+
     public static ArrayList<Comic> obtenerComics()
     {
         Connection conexion = ConfiguracionDB.conectarBaseDeDatos();

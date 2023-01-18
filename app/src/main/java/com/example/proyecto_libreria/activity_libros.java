@@ -70,4 +70,10 @@ public class activity_libros extends AppCompatActivity
         Intent intent = new Intent(this, Insertar_libro.class);
         startActivity(intent);
     }
+
+    public void Ir_BorrarLibro(View view)
+    {
+        Intent intent = new Intent(this, activity_borrar_libro.class);
+        startActivity(intent);
+    }
 }

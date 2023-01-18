@@ -6,11 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".activity_libros">
 
+    <Button
+        android:id="@+id/btn_borrarLibro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#0091D3"
+        android:onClick="Ir_BorrarLibro"
+        android:text="@string/borrar_libro"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="#5CC1EF"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +95,7 @@
             android:id="@+id/titulo_oredenarPorAutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#5CC1EF"
             android:gravity="center"
             android:padding="2dp"
             android:text="@string/ordenar_libros_por_autor"
@@ -90,6 +106,7 @@
             android:id="@+id/sp_autores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
             android:minHeight="48dp"
             android:padding="5dp"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -98,6 +115,7 @@
             android:id="@+id/rv_libros"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
             android:background="#61CEFF"
             tools:itemCount="15" />
 
@@ -107,8 +125,8 @@
         android:id="@+id/btn_insertar_libro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#0091D3"
         android:onClick="Ir_NuevoLibro"
         android:text="@string/nuevo_libro"
