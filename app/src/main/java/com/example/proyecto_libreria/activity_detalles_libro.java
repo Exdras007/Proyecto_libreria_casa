@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.proyecto_libreria.clases.Libro;
@@ -39,5 +40,17 @@ public class activity_detalles_libro extends AppCompatActivity
             Num_Paginas_detalles.setText(String.valueOf(l.getPaginas()));
             Precio_detalles.setText(String.valueOf(l.getPrecio()) + " €");
         }
+    }
+
+    public void EditarLibro(View view)
+    {
+        Intent intent = new Intent(this, activity_editar_libro.class);
+        startActivity(intent);
+    }
+
+    public void Volver(View view)
+    {
+        Intent intent = new Intent(this, activity_libros.class);
+        startActivity(intent);
     }
 }

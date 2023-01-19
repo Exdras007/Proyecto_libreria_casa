@@ -36,5 +36,7 @@
     <string name="numero_de_paginas">Numero de paginas:</string>
     <string name="id_detalles">ID</string>
     <string name="detalles_del_libro">Detalles del libro</string>
+    <string name="editar_libro">Editar Libro</string>
+    <string name="editar_libro_titulo">Editar libro</string>
     KelRed
 </resources>

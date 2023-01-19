@@ -115,6 +115,41 @@ public class libreriaDB
         }
     }
 
+    public static boolean actualizarLibro(Libro l, String cod_libroAntiguo)
+    {
+        Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
+        if(conexion == null)
+        {
+            return false;
+        }
+        try
+        {
+            String ordensql = "UPDATE libros SET ID_Libro = ?, Nombre = ?, Autor = ?, Num_Paginas = ?, Precio = ? WHERE ID_Libro = ?";
+            PreparedStatement pst = conexion.prepareStatement(ordensql);
+            pst.setString(1, l.getID());
+            pst.setString(2, l.getNombre());
+            pst.setString(3, l.getAutor());
+            pst.setString(4, String.valueOf(l.getPaginas()));
+            pst.setString(5, String.valueOf(l.getPrecio()));
+            int filasAfectadas = pst.executeUpdate();
+            pst.close();
+            conexion.close();
+            if(filasAfectadas > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static ArrayList<Comic> obtenerComics()
     {
         Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
