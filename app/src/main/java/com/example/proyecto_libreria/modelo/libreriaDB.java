@@ -60,7 +60,8 @@ public class libreriaDB
         }
 
         ArrayList<String> Autores = new ArrayList<String>();
-
+        String Todos = "Todos";
+        Autores.add(Todos);
         try
         {
             Statement sentencia = conexion.createStatement();
