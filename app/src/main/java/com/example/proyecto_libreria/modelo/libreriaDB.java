@@ -3,6 +3,8 @@ package com.example.proyecto_libreria.modelo;
 import android.util.Log;
 import com.example.proyecto_libreria.clases.Comic;
 import com.example.proyecto_libreria.clases.Libro;
+
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,6 +49,35 @@ public class libreriaDB
             e.printStackTrace();
             return libros;
         }
+    }
+
+    public static ArrayList<String> obtenerAutores()
+    {
+        Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
+        if (conexion == null)
+        {
+            return null;
+        }
+
+        ArrayList<String> Autores = new ArrayList<String>();
+
+        try
+        {
+            Statement sentencia = conexion.createStatement();
+            String ordenSQL = "SELECT DISTINCT Autor FROM libreria.libros";
+            ResultSet resultado = sentencia.executeQuery(ordenSQL);
+
+            while(resultado.next())
+            {
+                String Autor = resultado.getString("Autor");
+                Autores.add(Autor);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return Autores;
     }
 
     public static boolean insertarLibro(Libro l)

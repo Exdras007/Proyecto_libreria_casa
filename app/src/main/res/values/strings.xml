@@ -38,5 +38,7 @@
     <string name="detalles_del_libro">Detalles del libro</string>
     <string name="editar_libro">Editar Libro</string>
     <string name="editar_libro_titulo">Editar libro</string>
+    <string name="autor_prueba">Autor_prueba</string>
+    <string name="prueba_autor">prueba_autor</string>
     KelRed
 </resources>

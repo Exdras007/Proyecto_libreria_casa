@@ -9,14 +9,20 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 import com.example.proyecto_libreria.clases.Libro;
 import com.example.proyecto_libreria.modelo.libreriaDB;
 import java.util.ArrayList;
 
-public class activity_libros extends AppCompatActivity
-{
+public class activity_libros extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private RecyclerView rv_libros;
     private ListaLibrosAdapter adaptadorLibros;
+    private Spinner sp_autores;
+    private String autor_seleccionado;
+    private ArrayList<String> autores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,6 +57,16 @@ public class activity_libros extends AppCompatActivity
             // Esto es en portrait
             rv_libros.setLayoutManager(new LinearLayoutManager(this));
         }
+
+        sp_autores = (Spinner) findViewById(R.id.sp_autores);
+
+        if(sp_autores != null)
+        {
+            ArrayList<String> autores = libreriaDB.obtenerAutores();
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.activity_item_autor, autores);
+            adapter.setDropDownViewResource(R.layout.activity_item_autor);
+            sp_autores.setAdapter(adapter);
+        }
     }
 
     public void ir_inicio(View view)
@@ -75,5 +91,16 @@ public class activity_libros extends AppCompatActivity
     {
         Intent intent = new Intent(this, activity_borrar_libro.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+    {
+        autor_seleccionado = adapterView.getItemAtPosition(i).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
