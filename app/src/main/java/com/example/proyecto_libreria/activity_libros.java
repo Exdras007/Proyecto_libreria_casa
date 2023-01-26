@@ -44,7 +44,7 @@ public class activity_libros extends AppCompatActivity implements AdapterView.On
         {
             Log.i("libros", "No se puedo obtener los datos");
         }
-        adaptadorLibros = new ListaLibrosAdapter(this,libros_devueltos);
+        adaptadorLibros = new ListaLibrosAdapter(this, libros_devueltos);
         rv_libros.setAdapter(adaptadorLibros);
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE)

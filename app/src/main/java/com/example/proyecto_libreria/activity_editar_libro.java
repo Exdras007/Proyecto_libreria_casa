@@ -27,7 +27,7 @@ public class activity_editar_libro extends AppCompatActivity
         Autor_detalles = (TextView) findViewById(R.id.edt_editar_autor_libro);
         Num_Paginas_detalles = (TextView) findViewById(R.id.edt_editar_paginas_libro);
         Precio_detalles = (TextView) findViewById(R.id.edt_editar_precio_libro);
-
+        /*
         Intent intent = getIntent();
         if(intent != null)
         {
@@ -37,6 +37,7 @@ public class activity_editar_libro extends AppCompatActivity
             Num_Paginas_detalles.setText(String.valueOf(l.getPaginas()));
             Precio_detalles.setText(String.valueOf(l.getPrecio()));
         }
+         */
     }
 
     public void Volver(View view)

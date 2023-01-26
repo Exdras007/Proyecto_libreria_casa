@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 public class activity_item_autores extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

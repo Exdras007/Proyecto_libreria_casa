@@ -3,15 +3,12 @@ package com.example.proyecto_libreria;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.proyecto_libreria.clases.Libro;
 
 public class LibroViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
-
     public static final String EXTRA_LIBRO_ITEM = "Esdras.libros.com";
     // Atributos
     private TextView txt_item_id_libro;
@@ -19,7 +16,7 @@ public class LibroViewHolder extends RecyclerView.ViewHolder implements View.OnC
     private TextView txt_item_autor;
     private TextView txt_item_num_pag;
     private TextView txt_item_precio;
-    // ------------------------------
+    // -----------------------------------------------------------------
     private ListaLibrosAdapter lla;
 
     public TextView getTxt_item_id_libro() {
@@ -78,10 +75,9 @@ public class LibroViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txt_item_autor = (TextView) itemView.findViewById(R.id.Autor_txt);
         txt_item_num_pag = (TextView) itemView.findViewById(R.id.Numero_paginas_txt);
         txt_item_precio = (TextView) itemView.findViewById(R.id.Precio_txt);
-        // --------
+        // -----------------------------------------------------------------------------------------
         lla = listalibrosAdapter;
         itemView.setOnClickListener(this);
-
     }
 
     @Override
