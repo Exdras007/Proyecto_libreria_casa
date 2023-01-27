@@ -219,4 +219,51 @@ public class libreriaDB
         }
     }
 
+    public static ArrayList<Libro> filtrarPorAutor(String autorFiltrar)
+    {
+        Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
+        if (conexion == null)
+        {
+            return null;
+        }
+        ArrayList<Libro> librosDevueltos = new ArrayList<Libro>();
+
+        try
+        {
+            String ordenSQL = "";
+            PreparedStatement pst = null;
+            if(autorFiltrar.equalsIgnoreCase("Todos"))
+            {
+                ordenSQL = "SELECT * FROM libros ORDER BY ID_Libro";
+                pst = conexion.prepareStatement(ordenSQL);
+            }
+            else
+            {
+                ordenSQL = "SELECT * FROM libros WHERE Autor like ?";
+                pst = conexion.prepareStatement(ordenSQL);
+                pst.setString(1, autorFiltrar);
+            }
+            ResultSet resultado = pst.executeQuery();
+            while(resultado.next())
+            {
+                String id_libro = resultado.getString("ID_Libro");
+                String nombre = resultado.getString("Nombre");
+                String autor = resultado.getString("Autor");
+                int num_paginas = resultado.getInt("Num_Paginas");
+                Double precio = resultado.getDouble("Precio");
+                Libro elLibro = new Libro(id_libro, nombre, autor, num_paginas, precio);
+                librosDevueltos.add(elLibro);
+            }
+            resultado.close();
+            pst.close();
+            conexion.close();
+
+            return librosDevueltos;
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            return librosDevueltos;
+        }
+    }
 }

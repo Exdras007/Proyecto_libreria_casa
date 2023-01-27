@@ -42,6 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
                 android:text="@string/titulo"
                 android:textColor="#000000"
                 android:textSize="20sp" />

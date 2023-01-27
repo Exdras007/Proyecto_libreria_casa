@@ -17,7 +17,8 @@ import com.example.proyecto_libreria.clases.Libro;
 import com.example.proyecto_libreria.modelo.libreriaDB;
 import java.util.ArrayList;
 
-public class activity_libros extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class activity_libros extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+{
     private RecyclerView rv_libros;
     private ListaLibrosAdapter adaptadorLibros;
     private Spinner sp_autores;
@@ -66,6 +67,7 @@ public class activity_libros extends AppCompatActivity implements AdapterView.On
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.activity_item_autor, autores);
             adapter.setDropDownViewResource(R.layout.activity_item_autor);
             sp_autores.setAdapter(adapter);
+            sp_autores.setOnItemSelectedListener(this);
         }
     }
 
@@ -97,10 +99,38 @@ public class activity_libros extends AppCompatActivity implements AdapterView.On
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
     {
         autor_seleccionado = adapterView.getItemAtPosition(i).toString();
+        String AutorFiltrar = autor_seleccionado;
+        ArrayList<Libro> libros_devueltos = libreriaDB.filtrarPorAutor(AutorFiltrar);
+
+        if(libros_devueltos != null)
+        {
+            for(Libro ldf : libros_devueltos)
+            {
+                Log.i("libros", ldf.toString());
+            }
+        }
+        else
+        {
+            Log.i("libros", "No se puedo obtener los datos");
+        }
+        adaptadorLibros = new ListaLibrosAdapter(this, libros_devueltos);
+        rv_libros.setAdapter(adaptadorLibros);
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            // Esto es en landscape
+            rv_libros.setLayoutManager(new GridLayoutManager(this, 3));
+        }
+        else
+        {
+            // Esto es en portrait
+            rv_libros.setLayoutManager(new LinearLayoutManager(this));
+        }
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+    public void onNothingSelected(AdapterView<?> adapterView)
+    {
 
     }
 }

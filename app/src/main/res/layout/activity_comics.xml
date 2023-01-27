@@ -76,5 +76,17 @@
                 android:textColor="#000000" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/titulo_oredenarPorAutorComic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5CC1EF"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/ordenar_libros_por_autor"
+            android:textColor="#000000"
+            android:textStyle="bold|italic" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
