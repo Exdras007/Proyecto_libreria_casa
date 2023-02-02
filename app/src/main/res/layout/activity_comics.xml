@@ -6,6 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".activity_comics">
 
+    <Button
+        android:id="@+id/btn_insertar_comic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#0091D3"
+        android:onClick="Ir_NuevoLibro"
+        android:text="Nuevo Comic"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btn_borrarComic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#0091D3"
+        android:onClick="Ir_BorrarLibro"
+        android:text="Borrar Comic"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"

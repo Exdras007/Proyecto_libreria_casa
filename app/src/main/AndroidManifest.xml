@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".activity_borrar_comic"
+            android:exported="false" />
+        <activity
             android:name=".activity_detalles_comic"
             android:exported="false" />
         <activity

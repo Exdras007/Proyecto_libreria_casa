@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".activity_borrar_comic">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_borrar_comic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#61CEFF"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Borrar Comic"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/edt_IDaBorrarC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="ID del comic a borrar"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="20dp"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textColorHint="#4C4C4C"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_borrar_comic"
+        android:layout_width="153dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:backgroundTint="#0091D3"
+        android:onClick="BorrarComic"
+        android:text="Borrar Comic"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/btn_volver_borrarC"
+        android:layout_width="153dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:backgroundTint="#0091D3"
+        android:onClick="Volver"
+        android:text="@string/volver"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

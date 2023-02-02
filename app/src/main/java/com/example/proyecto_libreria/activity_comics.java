@@ -124,4 +124,15 @@ public class activity_comics extends AppCompatActivity implements AdapterView.On
     {
 
     }
+
+    public void Ir_NuevoLibro(View view)
+    {
+
+    }
+
+    public void Ir_BorrarLibro(View view)
+    {
+        Intent intent = new Intent(this, activity_borrar_comic.class);
+        startActivity(intent);
+    }
 }

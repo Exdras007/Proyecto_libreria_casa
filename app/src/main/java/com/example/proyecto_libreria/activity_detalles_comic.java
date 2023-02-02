@@ -36,7 +36,7 @@ public class activity_detalles_comic extends AppCompatActivity
             Titulo_detallesC.setText(c.getNombre());
             Autor_detallesC.setText(c.getAutor());
             Num_paginas_detallesC.setText(String.valueOf(c.getPaginas()));
-            Precio_detallesC.setText(String.valueOf(c.getPrecio()));
+            Precio_detallesC.setText(String.valueOf(c.getPrecio()) + " €");
         }
     }
 

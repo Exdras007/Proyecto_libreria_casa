@@ -10,52 +10,57 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.proyecto_libreria.clases.Libro;
 import com.example.proyecto_libreria.modelo.libreriaDB;
 
-public class activity_borrar_libro extends AppCompatActivity
+public class activity_borrar_comic extends AppCompatActivity
 {
 
-    private EditText ID_borrarLibro;
+    private EditText ID_borrarComic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_borrar_libro);
-        // ---------------------------------------------
-        ID_borrarLibro = (EditText) findViewById(R.id.edt_IDaBorrar);
+        setContentView(R.layout.activity_borrar_comic);
+        // ----------------------------------------------
+        ID_borrarComic = (EditText) findViewById(R.id.edt_IDaBorrarC);
     }
 
-    public void BorrarLibro(View view)
+    public void Volver(View view)
     {
-        String ID_Libro = String.valueOf(ID_borrarLibro.getText());
+        Intent intent = new Intent(this, activity_comics.class);
+        startActivity(intent);
+    }
 
-        if (ID_Libro.isEmpty())
-           {
-              ID_borrarLibro.setError("Debes poner al menos un ID");
-              return;
-           }
+    public void BorrarComic(View view)
+    {
+        String ID_Comic = String.valueOf(ID_borrarComic.getText());
+
+        if(ID_Comic.isEmpty())
+        {
+            ID_borrarComic.setError("Debes poner al menos un ID");
+            return;
+        }
 
         // -----------------------------------------------------------------------------------------
 
         AlertDialog.Builder alerta_borrar = new AlertDialog.Builder(this);
-        alerta_borrar.setTitle("¿Seguro que quieres borrar el libro?");
+        alerta_borrar.setTitle("¿Seguro que quieres borrar el comic?");
 
         alerta_borrar.setPositiveButton("si", new DialogInterface.OnClickListener()
         {
             @Override
             public void onClick(DialogInterface dialogInterface, int i)
             {
-                libreriaDB.borrarLibro(ID_Libro);
-                boolean libroBorrado = libreriaDB.borrarLibro(ID_Libro);
-                if(libroBorrado == true)
+                libreriaDB.borrarComic(ID_Comic);
+                boolean comicBorrado = libreriaDB.borrarLibro(ID_Comic);
+                if(comicBorrado == true)
                 {
-                    Log.i("Borrar", "Se ha borrado el libro");
+                    Log.i("Borrar", "Se ha borrado el comic");
                 }
                 else
                 {
-                    Log.i("Borrar", "No se ha borrado el libro");
+                    Log.i("Borrar", "No se ha borrado el comic");
                 }
             }
         });
@@ -68,11 +73,5 @@ public class activity_borrar_libro extends AppCompatActivity
             }
         });
         alerta_borrar.show();
-    }
-
-    public void Volver(View view)
-    {
-        Intent intent = new Intent(this, activity_libros.class);
-        startActivity(intent);
     }
 }
