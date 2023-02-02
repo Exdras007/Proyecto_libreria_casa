@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.proyecto_libreria.clases.Libro;
-
 public class item_libro extends AppCompatActivity
 {
 
@@ -23,11 +21,11 @@ public class item_libro extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_libro);
         // -------------------------------------------
-        ID_libro = (TextView) findViewById(R.id.Id_txt);
-        Nombre = (TextView) findViewById(R.id.TituloDelLibro_txt);
-        Autor = (TextView) findViewById(R.id.Autor_txt);
-        Num_Paginas = (TextView) findViewById(R.id.Numero_paginas_txt);
-        Precio = (TextView) findViewById(R.id.Precio_txt);
+        ID_libro = (TextView) findViewById(R.id.Id_txt_C);
+        Nombre = (TextView) findViewById(R.id.TituloDelComic_txt);
+        Autor = (TextView) findViewById(R.id.AutorC_txt);
+        Num_Paginas = (TextView) findViewById(R.id.Numero_paginasC_txt);
+        Precio = (TextView) findViewById(R.id.PrecioC_txt);
         // --------------------------
         Intent intent = getIntent();
         /*

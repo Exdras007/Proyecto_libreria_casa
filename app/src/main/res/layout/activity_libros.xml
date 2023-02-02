@@ -91,7 +91,7 @@
             android:id="@+id/sp_autores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#5CC1EF"
+            android:backgroundTint="#000000"
             android:minHeight="48dp"
             android:padding="5dp"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -99,7 +99,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_libros"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
             android:background="#61CEFF"
             tools:itemCount="15" />

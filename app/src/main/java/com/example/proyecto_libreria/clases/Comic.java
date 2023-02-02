@@ -1,8 +1,9 @@
 package com.example.proyecto_libreria.clases;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Comic
+public class Comic implements Serializable
 {
     //Atributos
     private String ID;

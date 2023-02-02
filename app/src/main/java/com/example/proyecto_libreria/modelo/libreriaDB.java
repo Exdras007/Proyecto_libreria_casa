@@ -3,8 +3,6 @@ package com.example.proyecto_libreria.modelo;
 import android.util.Log;
 import com.example.proyecto_libreria.clases.Comic;
 import com.example.proyecto_libreria.clases.Libro;
-
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,6 +64,36 @@ public class libreriaDB
         {
             Statement sentencia = conexion.createStatement();
             String ordenSQL = "SELECT DISTINCT Autor FROM libreria.libros";
+            ResultSet resultado = sentencia.executeQuery(ordenSQL);
+
+            while(resultado.next())
+            {
+                String Autor = resultado.getString("Autor");
+                Autores.add(Autor);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return Autores;
+    }
+
+    public static ArrayList<String> obtenerAutoresC()
+    {
+        Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
+        if (conexion == null)
+        {
+            return null;
+        }
+
+        ArrayList<String> Autores = new ArrayList<String>();
+        String Todos = "Todos";
+        Autores.add(Todos);
+        try
+        {
+            Statement sentencia = conexion.createStatement();
+            String ordenSQL = "SELECT DISTINCT Autor FROM libreria.comics";
             ResultSet resultado = sentencia.executeQuery(ordenSQL);
 
             while(resultado.next())
@@ -264,6 +292,54 @@ public class libreriaDB
         {
             e.printStackTrace();
             return librosDevueltos;
+        }
+    }
+
+    public static ArrayList<Comic> filtrarPorAutorC(String autorFiltrarC)
+    {
+        Connection conexion = ConfiguracionDB.conectarBaseDeDatos();
+        if (conexion == null)
+        {
+            return null;
+        }
+        ArrayList<Comic> comicsDevueltos = new ArrayList<Comic>();
+
+        try
+        {
+            String ordenSQL = "";
+            PreparedStatement pst = null;
+            if(autorFiltrarC.equalsIgnoreCase("Todos"))
+            {
+                ordenSQL = "SELECT * FROM comics ORDER BY ID_Comic";
+                pst = conexion.prepareStatement(ordenSQL);
+            }
+            else
+            {
+                ordenSQL = "SELECT * FROM comics WHERE Autor like ?";
+                pst = conexion.prepareStatement(ordenSQL);
+                pst.setString(1, autorFiltrarC);
+            }
+            ResultSet resultado = pst.executeQuery();
+            while(resultado.next())
+            {
+                String id_comic = resultado.getString("ID_Comic");
+                String nombre = resultado.getString("Nombre");
+                String autor = resultado.getString("Autor");
+                int num_paginas = resultado.getInt("Num_Paginas");
+                Double precio = resultado.getDouble("Precio");
+                Comic elComic = new Comic(id_comic, nombre, autor, num_paginas, precio);
+                comicsDevueltos.add(elComic);
+            }
+            resultado.close();
+            pst.close();
+            conexion.close();
+
+            return comicsDevueltos;
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            return comicsDevueltos;
         }
     }
 }

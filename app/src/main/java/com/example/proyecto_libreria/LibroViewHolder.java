@@ -70,11 +70,11 @@ public class LibroViewHolder extends RecyclerView.ViewHolder implements View.OnC
     public LibroViewHolder(@NonNull View itemView, ListaLibrosAdapter listalibrosAdapter)
     {
         super(itemView); // Esto debe ir lo primero para que herede
-        txt_item_id_libro = (TextView) itemView.findViewById(R.id.Id_txt);
-        txt_item_titulo = (TextView) itemView.findViewById(R.id.TituloDelLibro_txt);
-        txt_item_autor = (TextView) itemView.findViewById(R.id.Autor_txt);
-        txt_item_num_pag = (TextView) itemView.findViewById(R.id.Numero_paginas_txt);
-        txt_item_precio = (TextView) itemView.findViewById(R.id.Precio_txt);
+        txt_item_id_libro = (TextView) itemView.findViewById(R.id.Id_txt_C);
+        txt_item_titulo = (TextView) itemView.findViewById(R.id.TituloDelComic_txt);
+        txt_item_autor = (TextView) itemView.findViewById(R.id.AutorC_txt);
+        txt_item_num_pag = (TextView) itemView.findViewById(R.id.Numero_paginasC_txt);
+        txt_item_precio = (TextView) itemView.findViewById(R.id.PrecioC_txt);
         // -----------------------------------------------------------------------------------------
         lla = listalibrosAdapter;
         itemView.setOnClickListener(this);

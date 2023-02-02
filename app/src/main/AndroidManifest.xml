@@ -16,6 +16,12 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".activity_detalles_comic"
+            android:exported="false" />
+        <activity
+            android:name=".item_comic"
+            android:exported="false" />
+        <activity
             android:name=".activity_item_autores"
             android:exported="false" />
         <activity

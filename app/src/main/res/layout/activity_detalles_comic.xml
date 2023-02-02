@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".activity_detalles_comic">
+
+    <Button
+        android:id="@+id/btn_volver_detalles_comic"
+        android:layout_width="153dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:backgroundTint="#0091D3"
+        android:onClick="Volver"
+        android:text="@string/volver"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_precioC"
+        android:layout_width="132dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/Cero"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detalles_PaginasC" />
+
+    <TextView
+        android:id="@+id/txt_detalles_PaginasC"
+        android:layout_width="317dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/_000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detalles_NumPagC" />
+
+    <TextView
+        android:id="@+id/txt_detalles_NumPagC"
+        android:layout_width="317dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center|center_horizontal"
+        android:text="Numero de paginas:"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detalles_AutorC" />
+
+    <TextView
+        android:id="@+id/txt_detalles_AutorC"
+        android:layout_width="317dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center|center_horizontal"
+        android:text="Autor del comic"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detalles_TituloDelComic" />
+
+    <ImageView
+        android:id="@+id/img_detalles_comic"
+        android:layout_width="301dp"
+        android:layout_height="197dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/nada"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_detalles_titulo_comic"
+        app:srcCompat="@drawable/comic" />
+
+    <TextView
+        android:id="@+id/txt_detalles_TituloDelComic"
+        android:layout_width="317dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center|center_horizontal"
+        android:text="Titulo del comic"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_detalles_comic" />
+
+    <TextView
+        android:id="@+id/txt_id_libro4"
+        android:layout_width="70dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/id_detalles"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_detalles_titulo_comic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#61CEFF"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Detalles del comic"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_id_comic"
+        android:layout_width="70dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/id_detalles"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

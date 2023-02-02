@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="#5CC1EF"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,9 +83,24 @@
             android:background="#5CC1EF"
             android:gravity="center"
             android:padding="2dp"
-            android:text="@string/ordenar_libros_por_autor"
+            android:text="Ordenar comics por autor"
             android:textColor="#000000"
             android:textStyle="bold|italic" />
+
+        <Spinner
+            android:id="@+id/sp_autoresC"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:backgroundTint="#000000"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_comics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:background="#61CEFF"
+            tools:itemCount="15" />
 
     </LinearLayout>
 
