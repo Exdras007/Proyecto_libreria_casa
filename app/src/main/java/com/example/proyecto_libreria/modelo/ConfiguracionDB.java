@@ -7,10 +7,13 @@ import java.sql.SQLException;
 
 public class ConfiguracionDB
 {
-    public static final String hostDB = "10.0.2.2"; // Si el host es local se pone 10.0.2.2
+    // public static final String hostDB = "10.0.2.2"; // Si el host es local se pone 10.0.2.2
+    public static final String hostDB = "192.168.3.123"; // Si el host es remoto se pone la ip del ordenador que tenga la base de de datos
     public static final String nombreDB = "libreria"; // Nombre de la base de datos
-    public static final String usuarioDB = "root";
-    public static final String claveDB = "485163002";
+    // public static final String usuarioDB = "root";
+    public static final String usuarioDB = "Esdras";
+    // public static final String claveDB = "485163002";
+    public static final String claveDB = "esdras";
     public static final String opcionHORA = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     // las opciones de hora tambien las puedes poner en mysql, si no da error de vez en cuando
     // SET GLOBAL time_zone = '+1:00';

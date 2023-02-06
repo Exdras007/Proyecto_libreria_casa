@@ -7,6 +7,20 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/txt_autor_libro_novedades"
+        android:layout_width="170dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Brandon Sanderson"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_titulo_libro_novedades" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -81,16 +95,39 @@
 
     <TextView
         android:id="@+id/txt_tituloNovedades"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
+        android:layout_width="173dp"
+        android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:text="Novedades"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="264dp"
+        android:layout_height="407dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tituloNovedades"
+        app:srcCompat="@drawable/mistborn" />
+
+    <TextView
+        android:id="@+id/txt_titulo_libro_novedades"
+        android:layout_width="235dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Nacidos de la bruma: El imperio final"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

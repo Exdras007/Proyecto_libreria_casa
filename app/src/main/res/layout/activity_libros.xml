@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_libros">
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -94,8 +95,26 @@
             android:backgroundTint="#000000"
             android:minHeight="48dp"
             android:padding="5dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:splitMotionEvents="false"
             tools:ignore="SpeakableTextPresentCheck" />
 
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/Refrescar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_libros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:background="#61CEFF"
+                tools:itemCount="15" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!--
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_libros"
             android:layout_width="match_parent"
@@ -103,6 +122,9 @@
             android:layout_marginBottom="60dp"
             android:background="#61CEFF"
             tools:itemCount="15" />
+        -->
+
+
 
     </LinearLayout>
 
@@ -135,4 +157,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

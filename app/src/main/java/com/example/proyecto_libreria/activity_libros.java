@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -24,6 +26,9 @@ public class activity_libros extends AppCompatActivity implements AdapterView.On
     private Spinner sp_autores;
     private String autor_seleccionado;
     private ArrayList<String> autores;
+    private ArrayList<Libro> LibritosDevueltos;
+
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,12 +36,31 @@ public class activity_libros extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_libros);
         rv_libros = findViewById(R.id.rv_libros);
+        swipeRefreshLayout = findViewById(R.id.Refrescar);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+        {
+            @Override
+            public void onRefresh()
+            {
+                ArrayList<Libro> libros_devueltos = libreriaDB.obtenerLibros();
+                CrearRV();
+                // ------------------------------------
+                adaptadorLibros.notifyDataSetChanged();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
         // -------- Recoger de la base de datos --------
         ArrayList<Libro> libros_devueltos = libreriaDB.obtenerLibros();
+        LibritosDevueltos = libros_devueltos;
+        CrearRV();
+    }
 
-        if(libros_devueltos != null)
+    private void CrearRV()
+    {
+        if(LibritosDevueltos != null)
         {
-            for(Libro l : libros_devueltos)
+            for(Libro l : LibritosDevueltos)
             {
                 Log.i("libros", l.toString());
             }
@@ -45,7 +69,7 @@ public class activity_libros extends AppCompatActivity implements AdapterView.On
         {
             Log.i("libros", "No se puedo obtener los datos");
         }
-        adaptadorLibros = new ListaLibrosAdapter(this, libros_devueltos);
+        adaptadorLibros = new ListaLibrosAdapter(this, LibritosDevueltos);
         rv_libros.setAdapter(adaptadorLibros);
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE)
